@@ -1,0 +1,43 @@
+.container {
+    margin: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+#mid {
+    text-align: center;
+}
+
+.btn-update,
+.btn-delete,
+.btn-add {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-update:hover,
+.btn-delete:hover,
+.btn-add:hover {
+    background-color: #45a049;
+}

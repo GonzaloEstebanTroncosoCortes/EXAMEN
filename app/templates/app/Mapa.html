@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<h2>Para ver nuestra ubicación en el mapa, presiona el siguiente botón:</h2>
+<button onclick="mostrarMapa()" id="botonmapa">Ver/Ocultar Mapa</button>
+<div id="map"></div>
+
+<h1>Feriados de los últimos 10 años en Chile</h1>
+<ul id="feriados"></ul>
+
+{% endblock %}

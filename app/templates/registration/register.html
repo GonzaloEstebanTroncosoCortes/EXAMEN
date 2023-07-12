@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+
+
+{% block contenido %}
+{% load crispy_forms_tags %}
+
+<h1>REGISTRO DE USUARIO</h1>
+
+<br>
+
+<form action="" method="post" class="my-form">
+    {% csrf_token %}
+
+          {{ form | crispy }}
+          <a href="{% url 'index' %}" class="my-link">Inicio</a>
+          <a href="{% url 'login' %}" class="my-link">Iniciar Sesion</a>
+
+          <button class=" my-button float" type="submit">Registrarse</button>
+
+</form>
+{% endblock %}

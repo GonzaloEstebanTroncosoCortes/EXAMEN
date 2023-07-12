@@ -1,0 +1,89 @@
+/* Estilos del formulario */
+
+#error {
+    color: red;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: double;
+    text-shadow: 5%;
+    color: chocolate;
+    font-size: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+}
+
+.formdatos {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+form label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+footer {
+    background-color: darkgray;
+    text-align: center;
+}
+
+.icono {
+    margin-right: 5px;
+    display: inline-block;
+}
+
+#botenviar {
+    font-size: 30px;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    color: black;
+    margin: 5px;
+    width: 100%;
+}
+
+#botenviar:hover {
+    color: blueviolet;
+    background-color: antiquewhite;
+}
+
+#formulario {
+    border-style: dotted;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 15px;
+}

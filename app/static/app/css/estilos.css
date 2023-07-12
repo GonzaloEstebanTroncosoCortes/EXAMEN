@@ -1,0 +1,47 @@
+/*.noticia1 {
+    background-color: #005385;
+}*/
+
+.logo svg {
+    width: 1000%;
+    height: 1000%;
+    margin-top: 2150%;
+}
+
+.icono {
+    margin-right: 5px;
+    display: inline-block;
+}
+
+section .contenedor>div {
+    background: rgba(255, 255, 255, .2);
+    padding: 15px;
+}
+
+.noticia1>div {
+    background: rgba(255, 255, 255, .2);
+    padding: 15px;
+}
+
+footer {
+    background-color: darkgray;
+    text-align: center;
+}
+
+
+/*main*/
+
+.galeria {
+    border-top: 5px solid #3da5e2;
+    background: #fff;
+}
+
+.galeria .titulo {
+    color: #3da5e2;
+    font-weight: 300;
+}
+
+.galeria .imagenes .contenedor-imagen {
+    max-height: 400px;
+    overflow: hidden;
+}

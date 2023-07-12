@@ -1,0 +1,65 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+{% if request.user.is_authenticated %}
+<h3>Bienvenido</h3>
+<hr>
+<h4>
+    {{ user.username | upper }}, Bienvenido
+    </h4>
+{% endif %}
+<hr>
+<div class="container">
+    <h1>Fotografia</h1>
+    <table id="customers" border="1">
+        <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Fotografia</th>
+            <th>Precio</th>
+            <th colspan="2" id="mid">Realizar</th>
+        </thead>
+        {% for x in foto %}
+          <tr>
+              <td>{{x.id}}</td>
+              <td>{{x.nombre}}</td>
+              <td>{{x.descripcion}}</td>
+              <td>
+                <img src="{{x.archivo_fotografia.url}}" alt="{{x.nombre}}">
+              </td>
+              <td>{{x.precio}}</td>
+              <td>
+                {% if user.is_superuser %}
+                  <a href="actualizarProducto/{{x.id}}"><button id="up">Actualizar</button></a>
+                
+              </td>
+              <td>
+                <a href="eliminar/{{x.id}}"><button id="del">Eliminar</button></a>
+                {% endif %}
+                <a href="{% url 'Add' x.id %}"><button id="del" onclick="mostrarAlerta()">Agregar Carrito</button></a>
+
+            </td>
+          </tr>
+         {% endfor %}
+    </table>
+    <br><br>
+    {% if user.is_superuser %}
+    <a href="{% url 'agregarProducto' %}"><button id="new3">Agregar Fotografia</button></a><br><br>
+    {% endif %}
+    <div class="row col-6">
+      {% include "app/carrito.html" %}
+    </div>
+</div>
+<div class="row 12">
+    <img src="{%static 'app/imgs/periodistas.jpg' %}">
+</div> 
+<script>
+  function mostrarAlerta() {
+    alert("Producto agregado al carrito");
+  }
+</script>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<div class="container-fluid">
+    <div class="center ">
+        <h1>Inscríbete para recibir las últimas noticias en tu correo.</h1>           
+            
+        <form id="formulario" action="#" method="get" onsubmit="return enviarformulario() && validarPrimerNombre() && validarPrimerNombreNumero()  && validarSegundoNombre() && validarSegundoNombreNumero() && validarPrimerApellido() && validarPrimerApellidoNumero() && validarSegundoApellidoNumero() && validarSegundoApellido() && validarRut() && validarDireccion() && validarCorreo() && validarTelefono()">
+           
+            <label for="primerNombre" class="formdatos">Primer Nombre:</label>
+            <input type="text" id="primerNombre" name="primerNombre" placeholder="Ingrese su primer nombre"><br>
+            
+            <label for="segundoNombre" class="formdatos">Segundo Nombre:</label>
+            <input type="text" id="segundoNombre" name="segundoNombre" placeholder="Ingrese su segundo nombre"><br>
+            
+            <label for="apellidoPaterno" class="formdatos">Apellido Paterno:</label>
+            <input type="text" id="apellidoPaterno" name="apellidoPaterno" placeholder="Ingrese su Apellido Paterno" ><br>
+
+            <label for="apellidoMaterno" class="formdatos">Apellido Materno:</label>
+            <input type="text" id="apellidoMaterno" name="apellidoMaterno" placeholder="Ingrese su Apellido Materno"><br>
+
+            <label for="genero" class="formdatos">Género:</label>
+            <select id="genero" name="genero">
+              <option value="">Seleccionar género</option>
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+            </select>
+            <br>
+            <label for="rut" class="formdatos">RUT:</label>
+            <input type="text" id="rut" name="rut" placeholder="Ingrese su RUT sin punto y guion" ><br>
+            
+            <label for="direccion" class="formdatos">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Ingrese su dirección"><br>
+            
+            <label for="correo" class="formdatos">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico" ><br>
+            
+            <label for="telefono" class="formdatos">Teléfono:</label>
+            <input type="number" id="telefono" name="telefono" placeholder="Ingrese su número de teléfono" ><br>
+            <div id="error"></div>
+            <button type="submit"  id="botenviar" value="Enviar" >Enviar</button>                    
+            
+        </form> 
+       
+</div>
+</div>
+{% endblock %}

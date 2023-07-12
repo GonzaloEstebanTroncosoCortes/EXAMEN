@@ -1,0 +1,90 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+
+{% if request.user.is_authenticated %}
+<h3>Bienvenido</h3>
+<hr>
+<h4>
+    {{ user.username | upper }}, Bienvenido
+    </h4>
+{% endif %}
+<hr>
+<div class="container-fluid" style="background-color: whitesmoke; text-align: center;">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{%static 'app/imgs/noticia 1/00 portada.JPG' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>415 mil autos saldrían de la RM por Semana Santa: estas son las medidas en las carreteras</h5>
+              <p>Se espera que 415 mil vehículos dejen la región Metropolitana dentro de los próximos días, esto por la celebración de la Semana Santa. Conoce aquí las medidas implementadas en carreteras.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{%static 'app/imgs/noticia 2/00 portada.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Experto: No hay duda de que los influencers deben pagar impuestos</h5>
+              <p>Gonzalo Polanco, director del Centro de Estudios Tributarios de la U. de Chile, valoró la ofensiva del SII respecto de quienes reciben ingresos vía Twitch, Instagram, TikTok y OnlyFans.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{%static 'app/imgs/noticia 3/00 portada.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Proyecto prohíbe TikTok en móviles de trabajo de funcionarios públicos</h5>
+              <p>La propuesta, que comenzó su tramitación en la Cámara Baja, sigue los pasos de otros países y bloques que han impuesto vetos a la red social china por razones de ciberseguridad.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+</div>
+</div>
+<!--texto y foto-->
+<section class="container">
+<div class="row noticia1  justify-content-around g-0 px-4 mb-5">
+<div class="col-12 col-md-4 col-lg-3">
+  <p>La madrugada de este jueves se confirmó la muerte del carabinero Daniel Palma, tras ser baleado en dos ocasiones en el rostro la noche del miércoles por un delincuente, mientras realizaba una fiscalización en Santiago Centro.
+    “Lamentamos comunicar el fallecimiento de Daniel. Expresamos las condolencias a la institución, a la familia y al país”, indicó el director de la ex Posta Central, Patricio Barría.</p>
+</div>
+
+<div class=" contenedor col-12 col-md-4 col-lg-3" >
+    <div class="row ">
+      <div class="col-12">
+          <img class="img-fluid rounded" src="{%static 'app/imgs/CARABINERO_FALLECIDO.jpg' %}" width="400" alt="">
+      </div>
+
+    </div>
+</div>
+
+<div class="col-12 col-md-4 col-lg-3">
+  <p>Los supermercados y centros comerciales anunciaron sus horarios para los feriados de Semana Santa. La mayoría de los malls no abrirán sus puertas el viernes 7 de abril, salvo para ingresar a supermercados y cines, mientras que el sábado y domingo, atenderán con normalidad. Lo mismo aclararon desde las principales cadenas de supermercados, quienes abrirán todos los días del fin de semana largo.</p>
+</div>
+
+<div class=" contenedor col-12 col-md-4 col-lg-3" >
+    <div class="row ">
+      <div class="col-12">
+          <img class="img-fluid rounded" src="{%static 'app/imgs/FERIADO_MAL.jpg' %}" width="400" alt="">
+      </div>
+
+    </div>
+</div>
+
+</div>
+</section>
+{% endblock %}

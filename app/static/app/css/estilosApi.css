@@ -1,0 +1,60 @@
+#map {
+    height: 500px;
+    width: 100%;
+    display: none; /* Por defecto, el mapa está oculto */
+  }
+  
+  footer
+{
+    background-color: darkgray; 
+    text-align: center;
+}
+.icono
+{
+    margin-right: 5px;
+    display: inline-block;
+}
+h1
+{
+    font-size: 100px; 
+    text-align: center;
+    padding: 5px;
+    text-decoration: underline;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: indianred;
+
+}
+#feriados
+{
+    font-size: 30px;
+    background-color: indianred;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: beige;
+    border-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+h2
+{
+    padding: 5px;
+    text-align: left;
+    margin-left: 2%;
+}
+
+#botonmapa
+{
+    margin-left: 55%;
+    display: inline-block;
+    text-align: center;
+    padding: 1%;
+    font-size: 25px;
+    border-style: double;
+    margin-bottom: 2%;
+}
+#botonmapa:hover
+{
+    color: blueviolet;
+    background-color: beige;
+    border-style: dotted;
+}

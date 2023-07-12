@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+{% load crispy_forms_tags %}
+
+
+<h1>Inicio</h1>
+<br>
+<form action="" method="post" class="my-form">
+  {% csrf_token %}
+  
+  {{ form|crispy }}
+    <a href="{% url 'index' %}" class="card-link">Inicio</a>
+    <a href="{% url 'register'%}" class="card-link">Registrarse</a>
+  <br>    
+  <button type="submit" class="my-button">Iniciar Sesión</button>
+</form>
+
+<div class="espacio"></div> <!-- Div para empujar el footer hacia abajo -->
+{% endblock %}
