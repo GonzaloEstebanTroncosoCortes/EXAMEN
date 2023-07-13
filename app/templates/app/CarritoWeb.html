@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<main class="container">
+    <div class="row flex-row justify-content-end  col 12 col-md-12 col-lg-12">
+        <!--inicio-->
+        <div class="col-auto border-bottom pb-5 ">
+            <h2 class="titulo">Carrito de Compras</h2>
+            <div class="row col-6">
+                {% include "app/carrito.html" %}
+              </div>
+        </div>
+
+</main>
+{% endblock %}
