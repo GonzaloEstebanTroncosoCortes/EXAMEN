@@ -87,7 +87,7 @@ def restar_producto(request, id):
 def limpiar_carrito(request):
     carrito=Carrito(request)
     carrito.limpiar()
-    return redirect(to="CarritoWeb")
+    return redirect(to="ListaProducto")
 
 
 

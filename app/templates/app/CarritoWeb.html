@@ -4,14 +4,18 @@
 
 {% block contenido %}
 <main class="container">
-    <div class="row flex-row justify-content-end  col 12 col-md-12 col-lg-12">
+    <div class="row container-fluid flex-row justify-content-end  col 12 col-md-12 col-lg-12">
         <!--inicio-->
-        <div class="col-auto border-bottom pb-5 ">
+        <div class="fluid row col-12 col-md-6 col-lg-12 col-auto border-bottom pb-5 ">
             <h2 class="titulo text-center">Carrito de Compras</h2>
-            <div class="container-fluid row col-12 col-md-6 col-lg-12">
+            <div class="container-fluid row col-12 col-md-12 col-lg-12">
                 {% include "app/carrito.html" %}
-              </div>
+            </div>
         </div>
+    </div>
 
 </main>
+<div class="row 12">
+    <img src="{% static 'app/imgs/periodistas.jpg' %}" class="img-fluid"> 
+  </div>
 {% endblock %}
