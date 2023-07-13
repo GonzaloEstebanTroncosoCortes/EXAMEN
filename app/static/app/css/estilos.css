@@ -8,10 +8,17 @@
     margin-top: 2150%;
 }
 
+.icono-carrito {
+    color: green;
+    margin-left: 80%;
+    
+}
+
 .icono {
     margin-right: 5px;
     display: inline-block;
 }
+
 
 section .contenedor>div {
     background: rgba(255, 255, 255, .2);

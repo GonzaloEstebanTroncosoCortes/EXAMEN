@@ -5,6 +5,7 @@ from .models import fotografia
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login
 from app.Carrito import Carrito
+from app.context_processor import total_carrito
 
 
 
@@ -76,7 +77,7 @@ def eliminar_producto(request, id):
     carrito=Carrito(request)
     producto = fotografia.objects.get(id=id)
     carrito.eliminar(producto=producto)
-    return redirect(to="ListaProducto")
+    return redirect(to="CarritoWeb")
 
 def restar_producto(request, id):
     carrito=Carrito(request)
@@ -86,7 +87,8 @@ def restar_producto(request, id):
 def limpiar_carrito(request):
     carrito=Carrito(request)
     carrito.limpiar()
-    return redirect(to="ListaProducto")
+    return redirect(to="CarritoWeb")
+
 
 
 @login_required
