@@ -3,63 +3,70 @@
 {% load static %}
 
 {% block contenido %}
-{% if request.user.is_authenticated %}
-<h3>Bienvenido</h3>
-<hr>
-<h4>
-    {{ user.username | upper }}, Bienvenido
-    </h4>
-{% endif %}
-<hr>
-<div class="container">
-    <h1>Fotografia</h1>
-    <table id="customers" border="1">
+  {% if request.user.is_authenticated %}
+    <h3>Bienvenido</h3>
+    <hr>
+    <h4>{{ user.username | upper }}, Bienvenido</h4>
+  {% endif %}
+  <hr>
+  <h1>Carrito</h1>
+  <div class="container-fluid row col-12 col-md-6 col-lg-12">
+    {% include "app/carrito.html" %}
+  </div>
+  <hr>
+  <div class="container">
+    <h1>Productos</h1>
+    <div class="table-responsive">
+      <table id="customers" class="table table-bordered">
         <thead>
+          <tr>
             <th>Id</th>
             <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Fotografia</th>
+            <th>Descripción</th>
+            <th>Fotografía</th>
             <th>Precio</th>
-            <th colspan="2" id="mid">Realizar</th>
+            <th colspan="3" id="mid">Realizar</th>
+          </tr>
         </thead>
-        {% for x in foto %}
-          <tr>
-              <td>{{x.id}}</td>
-              <td>{{x.nombre}}</td>
-              <td>{{x.descripcion}}</td>
+        <tbody>
+          {% for x in foto %}
+            <tr>
+              <td>{{ x.id }}</td>
+              <td>{{ x.nombre }}</td>
+              <td>{{ x.descripcion }}</td>
               <td>
-                <img src="{{x.archivo_fotografia.url}}" alt="{{x.nombre}}">
+                <img src="{{ x.archivo_fotografia.url }}" alt="{{ x.nombre }}" class="img-fluid">
               </td>
-              <td>{{x.precio}}</td>
+              <td>{{ x.precio }}</td>
               <td>
                 {% if user.is_superuser %}
-                  <a href="actualizarProducto/{{x.id}}"><button id="up">Actualizar</button></a>
+                  <a href="actualizarProducto/{{ x.id }}"><button class="btn btn-primary">Actualizar</button></a>
                 
               </td>
               <td>
-                <a href="eliminar/{{x.id}}"><button id="del">Eliminar</button></a>
+                <a href="eliminar/{{ x.id }}"><button class="btn btn-danger">Eliminar</button></a>
                 {% endif %}
-                <a href="{% url 'Add' x.id %}"><button id="del" onclick="mostrarAlerta()">Agregar Carrito</button></a>
-
-            </td>
-          </tr>
-         {% endfor %}
-    </table>
+              </td>
+              <td>
+                <a href="{% url 'Add' x.id %}"><button class="btn btn-success" onclick="mostrarAlerta()">Agregar Carrito</button></a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
     <br><br>
     {% if user.is_superuser %}
-    <a href="{% url 'agregarProducto' %}"><button id="new3">Agregar Producto</button></a><br><br>
+      <a href="{% url 'agregarProducto' %}"><button class="btn btn-info">Agregar Producto</button></a><br><br>
     {% endif %}
-    <div class="row col-6">
-      {% include "app/carrito.html" %}
-    </div>
-</div>
-<div class="row 12">
-    <img src="{%static 'app/imgs/periodistas.jpg' %}">
-</div> 
-<script>
-  function mostrarAlerta() {
-    alert("Producto agregado al carrito");
-  }
-</script>
-
+    
+  </div>
+  <div class="row 12">
+    <img src="{% static 'app/imgs/periodistas.jpg' %}" class="img-fluid">
+  </div>
+  <script>
+    function mostrarAlerta() {
+      alert("Producto agregado al carrito");
+    }
+  </script>
 {% endblock %}
