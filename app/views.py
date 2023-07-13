@@ -26,6 +26,9 @@ def nosotros(request):# creamos esta funcion para cargar la vista para llamar al
 
 def home(request):# creamos esta funcion para cargar la vista para llamar al formulario_1 por medio del request
     return render(request, 'app/home.html')
+
+def CarritoWeb(request):
+    return render(request, 'app/CarritoWeb.html')
 # aplicaciones
 
 def agregarProducto(request):

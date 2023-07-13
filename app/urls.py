@@ -12,6 +12,7 @@ from .views import  actualizarrec
 from .views import  eliminar
 from .views import  exit
 from .views import  register
+from .views import CarritoWeb
 
 from .views import  home
 
@@ -38,6 +39,7 @@ urlpatterns = [
     path('logout/',exit, name='exit'),
     path('register/',register, name='register'),
     path('',home, name='home'),
+    path('CarritoWeb.html/',CarritoWeb, name='CarritoWeb'),
     
     path('agregar/<int:id>', agregar_producto, name="Add"),
     path('eliminar/<int:id>', eliminar_producto, name="Del"),
