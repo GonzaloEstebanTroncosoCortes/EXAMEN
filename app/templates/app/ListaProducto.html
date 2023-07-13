@@ -9,6 +9,11 @@
     <h4>{{ user.username | upper }}, Bienvenido</h4>
   {% endif %}
   <hr>
+  <h1>Carrito</h1>
+  <div class="container-fluid row col-12 col-md-6 col-lg-12">
+    {% include "app/carrito.html" %}
+  </div>
+  <hr>
   <div class="container">
     <h1>Productos</h1>
     <div class="table-responsive">
@@ -54,9 +59,7 @@
     {% if user.is_superuser %}
       <a href="{% url 'agregarProducto' %}"><button class="btn btn-info">Agregar Producto</button></a><br><br>
     {% endif %}
-    <div class="row col-8">
-      {% include "app/carrito.html" %}
-    </div>
+    
   </div>
   <div class="row 12">
     <img src="{% static 'app/imgs/periodistas.jpg' %}" class="img-fluid">
